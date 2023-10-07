@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+
+</head>
+<body class="bod">
+
+    
+    <section class="header1">
+     
+
+        <nav>
+          <a href="index.html"><img class="imgsize" src="image/log.webp" alt=""></a>
+  
+          <div class="nav-links" id="navLinks">
+            <img src="image/cancel.png" alt="" class="icon" onclick="hideMenu()">
+            
+  
+            
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="">ABOUT</a></li>
+              <li><a href="course.html">COURSE</a></li>
+              <li><a href="student.html">STUDENT</a></li>
+              <li><a href="inf.html">Inf </a></li>
+              <li><a href="">CONTACT</a></li>
+            </ul>
+  
+          </div>
+          <img src="image/menu.png" alt="" class="icon" onclick="showMenu()">
+          <!-- <i class="fa fa-bars" onclick="showMenu()" ></i> -->
+        </nav>
+
+        
+        <main>
+            <section class="form-section">
+                <h1 class="h11">Student Information Form</h1>
+                <form id="studentForm">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <label for="major">Major:</label>
+                    <select id="major" name="major" required>
+                        <option value="Administration">Administration</option>
+                        <option value="IT">IT</option>
+                        <option value="Science">Science</option>
+                        <option value="Art">Art</option>
+                    </select>
+                    <label for="imageUrl">Image URL:</label>
+                    <input type="url" id="imageUrl" name="imageUrl" required>
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                    <label for="grade">Grade:</label>
+                    <input type="text" id="grade" name="grade" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+            
+        
+            <section class="table-section">
+                <h1 class="h11">Student Information Table</h1>
+                <table id="studentTable">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Date of Birth</th>
+                            <th>Gender</th>
+                            <th>Phone Number</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Student information will be populated here dynamically -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+  
+  
+        
+        <script src="app.js"></script>
+</body>
+</html>
