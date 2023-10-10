@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
-
+    
+    
 </head>
 <body class="bod">
 
@@ -42,13 +43,13 @@
 
         
         <main>
-            <section class="form-section">
+            <section id="form">
                 <h1 class="h11">Student Information Form</h1>
                 <form id="studentForm">
-                    <label for="fullName">Full Name:</label>
-                    <input type="text" id="fullName" name="fullName" required>
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullName" required>
                     <label for="dob">Date of Birth:</label>
-                    <input type="date" id="dob" name="dob" required>
+                    <input type="date" id="dateofbirth" name="dob" required>
                     <label for="gender">Gender:</label>
                     <select id="gender" name="gender" required>
                         <option value="male">Male</option>
@@ -63,12 +64,12 @@
                         <option value="Art">Art</option>
                     </select>
                     <label for="imageUrl">Image URL:</label>
-                    <input type="url" id="imageUrl" name="imageUrl" required>
+                    <input type="url" id="imageurl" name="imageUrl" >
                     <label for="phoneNumber">Phone Number:</label>
-                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                    <input type="tel" id="phonenumber" name="phoneNumber" required>
                     <label for="grade">Grade:</label>
                     <input type="text" id="grade" name="grade" required>
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="moh">Submit</button>
                 </form>
             </section>
             
@@ -90,9 +91,10 @@
                     </tbody>
                 </table>
             </section>
+            <div id="cardSIn" ></div>
         </main>
   
-  
+        
         
         <script src="app.js"></script>
 </body>
