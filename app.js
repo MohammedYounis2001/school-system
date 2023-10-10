@@ -8,36 +8,66 @@ var navLinks = document.getElementById("navLinks");
         navLinks.style.right = "-200px";
       }
 
+      class student {
+        static arr = [];
+    
+        constructor (info) {     
+            this.info = info;
+        }
+    
+        myfunction(){
+            student.arr.push(this.info);
+            localStorage.setItem("Students", JSON.stringify(student.arr));     /// convert the data from java script to json
+        }
+    }
 
-      document.addEventListener('DOMContentLoaded', () => {
-        const studentForm = document.getElementById('studentForm');
-        const studentTable = document.getElementById('studentTable').getElementsByTagName('tbody')[0];
+      let submit = document.getElementById("moh");
+      function createStudentCard(info) {
+        let card = document.createElement("div");
+        card.style.border = "2px solid black";
+        card.style.marginLeft = "10px";
+        card.style.marginTop = "7px";
+        card.style.width = "200px";
+        card.style.height ="300px";
+        card.style.backgroundColor = "#f3f4f7";
+        
+
+        
     
-        studentForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        let imgg = document.createElement("img");
+        imgg.src = 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png';
+        imgg.classList.add("photo");
+        card.appendChild(imgg);
     
-            // Get form values
-            const fullName = document.getElementById('fullName').value;
-            const dob = document.getElementById('dob').value;
-            const gender = document.getElementById('gender').value;
-            const phoneNumber = document.getElementById('phoneNumber').value;
-            const grade = document.getElementById('grade').value;
+        for (const value of info) {
+            let div = document.createElement("div");
+            div.innerHTML = value;
+            card.appendChild(div);
+        }
     
-            // Create a new table row and populate it with the form values
-            const newRow = studentTable.insertRow();
-            const cell1 = newRow.insertCell(0);
-            const cell2 = newRow.insertCell(1);
-            const cell3 = newRow.insertCell(2);
-            const cell4 = newRow.insertCell(3);
-            const cell5 = newRow.insertCell(4);
+        let cardSIn = document.getElementById("cardSIn");
+        cardSIn.appendChild(card);
+    }
+
+    submit.addEventListener("click", (eventt) => {
+        eventt.preventDefault();
+     const info = [
     
-            cell1.textContent = fullName;
-            cell2.textContent = dob;
-            cell3.textContent = gender;
-            cell4.textContent = phoneNumber;
-            cell5.textContent = grade;
+            document.getElementById("fullname").value,
+            document.getElementById("dateofbirth").value,
+            document.getElementById("gender").value,
+            document.getElementById("phonenumber").value,
+            document.getElementById("grade").value
+        ];
     
-            // Clear the form fields after submission
-            studentForm.reset();
-        });
-    });      
+    
+    // Save data to localStorage
+        let hh = new student(info);
+        hh.myfunction();
+    
+    
+    // Create and display the student card
+        createStudentCard(info);
+    
+    
+    });
