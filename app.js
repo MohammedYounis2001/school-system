@@ -8,13 +8,27 @@ var navLinks = document.getElementById("navLinks");
         navLinks.style.right = "-200px";
       }
 
+      document.addEventListener("DOMContentLoaded", () => {
+        if (localStorage.getItem("Students")) {
+            const savedStudents = JSON.parse(localStorage.getItem("Students"));      // convert the data from json to java script to display it
+            student.arr = savedStudents;
+    
+    //Display data saved in localStorage
+            savedStudents.forEach((studentInfo) => {
+                createStudentCard(studentInfo);
+            });
+        }
+    });
+
       class student {
         static arr = [];
     
         constructor (info) {     
             this.info = info;
         }
-    
+
+       
+
         myfunction(){
             student.arr.push(this.info);
             localStorage.setItem("Students", JSON.stringify(student.arr));     /// convert the data from java script to json
